@@ -14,13 +14,15 @@
       :newMessagesCount="newMessagesCount"
       :onMessageWasSent="onMessageWasSent"
       :open="openChat"
+      :showStartWindow="showStartWindow"
       :participants="participants"
       :showEmoji="true"
       :showFile="true"
       :showTypingIndicator="showTypingIndicator"
       :titleImageUrl="titleImageUrl"
       @onType="handleOnType"
-    />
+    >
+    </beautiful-chat>
     <p class="text-center toggle">
       <a
         :style="{color: linkColor}"
@@ -114,7 +116,8 @@ export default {
       chosenColor: null,
       alwaysScrollToBottom: false,
       messageStyling: true,
-      userIsTyping: false
+      userIsTyping: false,
+      showStartWindow: false,
     }
   },
   created() {
@@ -246,5 +249,37 @@ body {
 
 .messageStyling {
   font-size: small;
+}
+
+.demo-test-area--button {
+  font-family: Avenir Next, Helvetica Neue, Helvetica, sans-serif;
+  font-weight: 400;
+  margin-top: 20px;
+  user-select: none;
+  border: none;
+  line-height: 1.4;
+  text-decoration: none;
+  background: #4e8cff;
+  color: white;
+  padding: 6px 10px;
+  font-size: 20px;
+  height: 50px;
+  border-radius: 4px;
+  width: 80%;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  align-self: center;
+}
+
+.demo-test-area--button:hover {
+  background: #4883f1;
+}
+
+.login-form{
+    height: 100%;
+    overflow: auto;
+    padding-left: 5px;
+    padding-top: 8px;
 }
 </style>
